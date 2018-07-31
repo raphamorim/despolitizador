@@ -2,6 +2,7 @@ import forEach from 'lodash/forEach';
 import json from '../library.json';
 import { removeAccent } from './convert.js'; 
 import { debounce } from './debounce.js'; 
+import { capitalizeFirstLetter } from './capitalize'; 
 
 const generateRandomKey = (data = []) => Math.floor(Math.random() * (data.length - 0) + 0);
 
@@ -24,17 +25,18 @@ export const translator = (e) => {
     if(text === ''){
       $translator.placeholder = 'Digitar texto...';
       $result.value = 'Tradução'; 
-      return; 
+      return;
     }
     text = translate(json, text);
-    $result.value = text || 'Tradução';  
+    $result.value = capitalizeFirstLetter(text) || 'Tradução';
+    $translator.value = capitalizeFirstLetter($translator.value);
   };
   
   const getRandomText = () => {
     const keys = Object.keys(json);
     const phrase = keys[generateRandomKey(keys)];
-    $translator.placeholder = phrase;
-    $result.value = translate(json, phrase);
+    $translator.placeholder = capitalizeFirstLetter(phrase);
+    $result.value = translate(json, capitalizeFirstLetter(phrase));
   };
 
   $translator.addEventListener('keyup', (e) => debounce(textTranslate(), 600));
