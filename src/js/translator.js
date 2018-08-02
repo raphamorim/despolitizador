@@ -35,7 +35,7 @@ export const translator = (e) => {
   const getRandomText = () => {
     const keys = Object.keys(json);
     const phrase = keys[generateRandomKey(keys)];
-    $translator.value = capitalizeFirstLetter(phrase);
+    $translator.placeholder = capitalizeFirstLetter(phrase);
     $result.value = capitalizeFirstLetter(translate(json, phrase));
   };
 
