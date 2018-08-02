@@ -9,8 +9,10 @@ const generateRandomKey = (data = []) => Math.floor(Math.random() * (data.length
 const translate = (library, input) => {
   let text = input;
   filter(library, (value, key) => { 
-    const regex = new RegExp(removeAccent(key), 'gm'); 
-    text = text.replace(regex, value); 
+    const regex = new RegExp(removeAccent(key), 'gm');  
+    if (removeAccent(text) === removeAccent(key)) {
+      return text = removeAccent(text).replace(regex, value); 
+    }
   }); 
   return text;
 };
