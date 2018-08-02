@@ -1,4 +1,4 @@
-import forEach from 'lodash/forEach';
+import filter from 'lodash/filter';
 import json from '../library.json';
 import { removeAccent } from './convert.js'; 
 import { debounce } from './debounce.js'; 
@@ -8,7 +8,7 @@ const generateRandomKey = (data = []) => Math.floor(Math.random() * (data.length
 
 const translate = (library, input) => {
   let text = input;
-  forEach(library, (value, key) => { 
+  filter(library, (value, key) => { 
     const regex = new RegExp(removeAccent(key), 'gm'); 
     text = text.replace(regex, value); 
   }); 
@@ -35,8 +35,8 @@ export const translator = (e) => {
   const getRandomText = () => {
     const keys = Object.keys(json);
     const phrase = keys[generateRandomKey(keys)];
-    $translator.placeholder = capitalizeFirstLetter(phrase);
-    $result.value = translate(json, capitalizeFirstLetter(phrase));
+    $translator.value = capitalizeFirstLetter(phrase);
+    $result.value = capitalizeFirstLetter(translate(json, phrase));
   };
 
   $translator.addEventListener('keyup', (e) => debounce(textTranslate(), 600));
