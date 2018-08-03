@@ -7,7 +7,10 @@ module.exports = {
   globals: {
     "fetch": false,
     "window": true,
-    "document": true
+    "document": true,
+    "describe": true,
+    "test": true,
+    "expect": true,
   },
   extends: 'eslint:recommended',
   parserOptions: {

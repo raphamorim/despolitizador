@@ -1,39 +1,36 @@
 import filter from 'lodash/filter';
 import json from '../library.json';
-import { removeAccent } from './convert.js'; 
-import { debounce } from './debounce.js'; 
-import { capitalizeFirstLetter } from './capitalize'; 
+import { debounce } from './debounce.js';
+import { capitalizeFirstLetter } from './capitalize';
 
 const generateRandomKey = (data = []) => Math.floor(Math.random() * (data.length - 0) + 0);
 
 const translate = (library, input) => {
   let text = input;
-  filter(library, (value, key) => { 
-    const regex = new RegExp(removeAccent(key), 'gm');  
-    if (removeAccent(text) === removeAccent(key)) {
-      return text = removeAccent(text).replace(regex, value); 
-    }
-  }); 
+  filter(library, (value, key) => {
+    const regex = new RegExp(key, 'gm');
+    text = text.replace(regex, value);
+  });
   return text;
 };
 
 export const translator = (e) => {
   const $translator = document.querySelector('[data-translator="input"]');
-  const $result = document.querySelector('[data-translator="result"]'); 
-  
-  const textTranslate = (e) => { 
+  const $result = document.querySelector('[data-translator="result"]');
+
+  const textTranslate = (e) => {
     let text;
-    text = $translator.value.toLowerCase();  
+    text = $translator.value.toLowerCase();
     if(text === ''){
       $translator.placeholder = 'Digitar texto...';
-      $result.value = 'Tradução'; 
+      $result.value = 'Tradução';
       return;
     }
     text = translate(json, text);
     $result.value = capitalizeFirstLetter(text) || 'Tradução';
     $translator.value = capitalizeFirstLetter($translator.value);
   };
-  
+
   const getRandomText = () => {
     const keys = Object.keys(json);
     const phrase = keys[generateRandomKey(keys)];
