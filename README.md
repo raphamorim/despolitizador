@@ -17,8 +17,10 @@ It is simple, you need to access the `src/library.json`, add the new word and su
 Example:
 
 ```json
-  "vossa excelencia": "mano"
+  "vossa excelência": "mano"
 ```
+
+It need that all words in our library.json using the correct grammar.
 
 ## Getting Started
 
