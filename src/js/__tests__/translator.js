@@ -19,4 +19,10 @@ describe('translate', () => {
 
     expect(translate(library, inputText)).toBe('mano é um membro da casta mais alta');
   });
+
+  test('the input with unaccented word', () => {
+    const inputText = 'usucapiao';
+
+    expect(translate(library, inputText)).toBe('tomou de assalto');
+  });
 });

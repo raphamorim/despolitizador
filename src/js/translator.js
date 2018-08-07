@@ -2,16 +2,21 @@ import filter from 'lodash/filter';
 import json from '../library.json';
 import { debounce } from './debounce.js';
 import { capitalizeFirstLetter } from './capitalize';
+import { removeAccent } from './convert';
 
 const generateRandomKey = (data = []) => Math.floor(Math.random() * (data.length - 0) + 0);
 
-const translate = (library, input) => {
-  let text = input;
-  filter(library, (value, key) => {
-    const regex = new RegExp(key, 'gm');
-    text = text.replace(regex, value);
+export const translate = (library, inputText) => {
+  let translatedText = inputText;
+  filter(library, (politicalLanguage, peopleLanguage) => {
+    const peopleLanguageRegex = new RegExp(peopleLanguage, 'gm');
+    const peopleLanguageWithoutAccentRegex = new RegExp(removeAccent(peopleLanguage), 'gm');
+
+    translatedText = translatedText
+      .replace(peopleLanguageRegex, politicalLanguage)
+      .replace(peopleLanguageWithoutAccentRegex, politicalLanguage);
   });
-  return text;
+  return translatedText;
 };
 
 export const translator = (e) => {
