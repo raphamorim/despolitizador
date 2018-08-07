@@ -50,8 +50,10 @@ html(lang='pt-br')
             .translator__content
               label.translator__label(for='after') Tradução
               textarea.translator__text(disabled id='after' data-translator='result') Tradução...
+          button.translator__button(data-translator='reload') Trocar palavra!
         section.content
             h1.title #{data.description}
+            p.text Funciona com frases ou palavras 😄
             p.text 
               | Quer traduzir novas palavras? 
               a(href='https://github.com/LFeh/1500-translator' target='_blank' rel='noopener noreferrer') Adiciona aí

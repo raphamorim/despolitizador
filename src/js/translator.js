@@ -22,6 +22,7 @@ export const translate = (library, inputText) => {
 export const translator = (e) => {
   const $translator = document.querySelector('[data-translator="input"]');
   const $result = document.querySelector('[data-translator="result"]');
+  const $reload = document.querySelector('[data-translator="reload"]');
 
   const textTranslate = (e) => {
     let text;
@@ -44,5 +45,6 @@ export const translator = (e) => {
   };
 
   $translator.addEventListener('keyup', (e) => debounce(textTranslate(), 600));
+  $reload.addEventListener('click', () => getRandomText());
   window.addEventListener('load', () => getRandomText());
 };
