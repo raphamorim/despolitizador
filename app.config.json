@@ -1,10 +1,10 @@
 {
-	"title": "1500 Translator",
+	"title": "Despolitizador",
 	"description": "Traduzindo linguajar político para vocabulário das ruas",
-	"url": "https://www.felipefialho.com/1500-translator/",
+	"url": "https://www.felipefialho.com/despolitizador/",
 	"logo": "medias/political-avatar.svg",
 	"logo_fallback": "medias/political-avatar.png",
 	"theme_color": "#0291a7",
-	"short_name": "Translator",
+	"short_name": "Despolitizador",
 	"ga": "UA-40410936-4"
 }

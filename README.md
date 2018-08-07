@@ -1,14 +1,14 @@
 <p align="center"><img src="/src/medias/political-avatar.svg" alt="Political Avatar" width="200"></p>
 
-# 1500 Translator
+# Despolitizador
 
-![Travis](https://img.shields.io/travis/LFeh/1500-translator.svg)
-[![license](https://img.shields.io/github/license/LFeh/1500-translator.svg)](./license.md)
-[![GitHub contributors](https://img.shields.io/github/contributors/LFeh/1500-translator.svg)](https://github.com/LFeh/1500-translator/graphs/contributors)
+![Travis](https://img.shields.io/travis/LFeh/despolitizador.svg)
+[![license](https://img.shields.io/github/license/LFeh/despolitizador.svg)](./license.md)
+[![GitHub contributors](https://img.shields.io/github/contributors/LFeh/despolitizador.svg)](https://github.com/LFeh/despolitizador/graphs/contributors)
 
 > To translate political language for people's language
 
-[View project](https://www.felipefialho.com/1500-translator/)
+[View project](https://www.felipefialho.com/despolitizador/)
 
 ## Add new words
 
@@ -29,8 +29,8 @@ This project uses Pug, Stylus and Webpack.
 
 ```sh
 # Clone this repository
-$ git clone git@github.com:LFeh/1500-translator.git
-$ cd 1500-translator
+$ git clone git@github.com:LFeh/despolitizador.git
+$ cd despolitizador
 
 # install dependencies
 $ npm i
