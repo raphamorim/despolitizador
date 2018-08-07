@@ -60,6 +60,10 @@ To help you, this project has a `npm run fix` command to fix all eslint errors.
 - `npm run fix`: command to fix all eslint errors
 - `npm run deploy`: run all tasks to build and deploy on gh-pages
 
+## Credits
+
+Thanks [marcelokohl](@marcelokohl] for the ideia to name of project 😄
+
 ## License
 
 MIT License © Felipe Fialho
